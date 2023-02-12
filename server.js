@@ -1,9 +1,11 @@
 const express = require("express");
-
+const cors = require("cors");
 const app = express();
+
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
+app.use(cors());
 
 app.get("/", (req, res) => {
   let data = {
@@ -18,10 +20,11 @@ app.get("/", (req, res) => {
     annualSalary: "£34,5000",
   };
   const result = res.json(data);
-  console.log(`The result is : ${result}`);
+  console.log(`The result is :`);
+    console.log(result);
 });
 
-app.post('/jobTitle/', (req,res)=>{
+app.post('/jobTitle', (req,res)=>{
     let searchJobTitle = req.body.jobTitle
     console.log(`Searching ${searchJobTitle}`);
    let requestData = employeeProfile.filter((job)=> job.jobTitle === searchJobTitle || job.jobCategory === searchJobTitle);
