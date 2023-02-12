@@ -21,6 +21,14 @@ app.get("/", (req, res) => {
   console.log(`The result is : ${result}`);
 });
 
+app.post('/jobTitle/', (req,res)=>{
+    let searchJobTitle = req.body.jobTitle
+    console.log(`Searching ${searchJobTitle}`);
+   let requestData = employeeProfile.filter((job)=> job.jobTitle === searchJobTitle || job.jobCategory === searchJobTitle);
+   console.log(`Searching: ${requestData}`)
+   res.json(requestData);
+})
+
 app.listen(PORT, () => {
   console.log(`Listen on port ${PORT}`);
 });
