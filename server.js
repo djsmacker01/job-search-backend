@@ -72,7 +72,7 @@ const employeeProfile = [
     lastName: "Michael",
     age: 47,
     jobTitle: "Senior Accounting Manager",
-    jobCategory: "Accountant",
+    jobCategory: "Accounting",
     postCode: "CF37 2NR",
     phoneNumber: "123",
     annualSalary: "£64,5000",
