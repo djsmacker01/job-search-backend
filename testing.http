@@ -6,6 +6,6 @@ GET http://localhost:3000
  POST http://localhost:3000/jobTitle
 content-type: application/json
 
-# {"jobCategory":"Engineering"}
+# {"jobCategory":"IT"}
 
-{"jobTitle":"Frontend Developer"}
+{"jobTitle":"Accountant"}

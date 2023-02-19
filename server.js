@@ -26,11 +26,12 @@ app.get("/", (req, res) => {
 
 app.post('/jobTitle', (req,res)=>{
   
-    let searchJobTitle = req.body.jobCategory  
+    let searchJobTitle = req.body.jobCategory || req.body.jobTitle
     console.log(`Searching ${searchJobTitle}`);
    let requestData = employeeProfile.filter(
      (job) =>
-       job.jobCategory === searchJobTitle 
+       job.jobCategory === searchJobTitle || job.jobTitle === searchJobTitle
+
    );
    console.log(`Searching: ${requestData}`)
    res.json(requestData);
