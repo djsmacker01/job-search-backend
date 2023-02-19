@@ -30,7 +30,7 @@ app.post('/jobTitle', (req,res)=>{
     console.log(`Searching ${searchJobTitle}`);
    let requestData = employeeProfile.filter(
      (job) =>
-       job.jobCategory === searchJobTitle || job.jobTitle === searchJobTitle
+       job.jobCategory.toUpperCase() === searchJobTitle || job.jobTitle.toUpperCase() === searchJobTitle
 
    );
    console.log(`Searching: ${requestData}`)
