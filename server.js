@@ -25,9 +25,13 @@ app.get("/", (req, res) => {
 });
 
 app.post('/jobTitle', (req,res)=>{
-    let searchJobTitle = req.body.jobTitle
+  
+    let searchJobTitle = req.body.jobCategory  
     console.log(`Searching ${searchJobTitle}`);
-   let requestData = employeeProfile.filter((job)=> job.jobTitle === searchJobTitle || job.jobCategory === searchJobTitle);
+   let requestData = employeeProfile.filter(
+     (job) =>
+       job.jobCategory === searchJobTitle 
+   );
    console.log(`Searching: ${requestData}`)
    res.json(requestData);
 })
